@@ -4,10 +4,11 @@ This is the answer for the technical question. The program prints out an activit
 You can download this project and open it in Eclipse. Go to src -> answer -> Main.java, then click the Run button.
 Type in inputs and press Enter. 
 
-<Screenshot>
+![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot.PNG "Screenshot")
+
 NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first, stays on top.
 
-PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. This queue will be sorted differently depending on whether or not the time of making a cup of coffee is taken into account. (The program provides you options to to turn this "time of making a cup of coffee" on or off)
+PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. This queue will be sorted differently depending on whether or not the time of making a cup of coffee is taken into account. (The program provides you the way to easily "turn" this "time of making a cup of coffee" on or off)
 
 The output prints out 2 seperate queues for ease of comparison.
 
