@@ -8,7 +8,7 @@ Sample output:
 
 ![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot.PNG "Screenshot")
 
-##Explaination
+##Explanation
 The output prints out 2 seperate queues set next to each other, seperated by a "|" for ease of comparison.
 
 * NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
