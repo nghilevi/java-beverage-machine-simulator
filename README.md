@@ -11,17 +11,17 @@ Sample output:
 ##Explaination
 The output prints out 2 seperate queues set next to each other, seperated by a "|" for ease of comparison.
 
-NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
+* NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
 
-PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. This queue will be sorted differently depending on whether or not the time of making a cup of coffee is taken into account. (The program provides you way to easily "turn" this feature on or off as described below)
+* PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. This queue will be sorted differently depending on whether or not the time of making a cup of coffee is taken into account. (The program provides you way to easily "turn" this feature on or off as described below)
 
-Engineer-Id: each engineer-id represents an engineer.
+* Engineer-Id: each engineer-id represents an engineer.
 
-Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the likelihood that the engineer can become super-busy.
+* Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the likelihood that the engineer can become super-busy.
 
-End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by startedBusyTime + timeStaySuperBusy (in minutes) inputed by the user.
+* End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by startedBusyTime + timeStaySuperBusy (in minutes) inputed by the user.
 
-Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time when the engineer enter a queue is before or after he/she has become non super busy.
+* Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time when the engineer enter a queue is before or after he/she has become non super busy.
 
 ##Other notes about this implementation:
 _ For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily.
