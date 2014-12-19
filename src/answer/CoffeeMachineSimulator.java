@@ -22,10 +22,11 @@ public class CoffeeMachineSimulator {
 	}
 	
 	public void runCoffeeMachineSimulator (int numberOfEngineers,Float chanceAnEngineerCanBeSuperBusy,Float timeStayBusy){
+		long startTime = System.nanoTime();
 		jointQueueTimeComparator=new JointQueueTimeComparator();
 		busyStatusComparator=new BusyStatusComparator(makeOneCupOfCoffeeTime);
 		
-		System.out.println("\nA sample activities log of coffee machine in a working day starting from "+startWorkingTime+":00 to "+endWorkingTime+":00\n");
+		System.out.println("\nA sample activity log of coffee machine in a working day starting from "+startWorkingTime+":00 to "+endWorkingTime+":00\n");
 		
 		//Initialize engineerList
 		Engineer.timeStaySuperBusy= timeStayBusy;
@@ -43,6 +44,11 @@ public class CoffeeMachineSimulator {
 	    	displayActivitiesInOneWorkingHour(i,engineerList);
 	    	System.out.println("===================================================================================================================================================================");
 	    }
+		
+		//Print out execution time (including time needed to display on the console)
+		long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println("Execution time: "+duration/1000000+" milliseconds");
 	}
 
 	private void displayActivitiesInOneWorkingHour(int currentHour,ArrayList<Engineer> engineerList){    

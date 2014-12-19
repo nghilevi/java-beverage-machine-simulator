@@ -9,24 +9,20 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		int numberOfEngineers;
 		float chanceAnEngineerCanBeSuperBusy,timeStayBusy;
+		CoffeeMachineSimulator coffeeMachineSimulator;
+		Scanner in = new Scanner(System.in);
 		
 		//The user starts typing inputs
-		Scanner in = new Scanner(System.in);
 		numberOfEngineers=(int) inputScanner(in,"Please enter a valid (integer) number of engineers:",false);
-		chanceAnEngineerCanBeSuperBusy=(Float) inputScanner(in,"Please enter the chance (from 0.0 to 1.0) that an engineer becomes super-busy in some unit of time:",true);
-		timeStayBusy=(Float) inputScanner(in,"Please enter how long they stay super-busy: (in minutes)",true);
+		chanceAnEngineerCanBeSuperBusy=(float) inputScanner(in,"Please enter the chance (from 0.0 to 1.0) that an engineer becomes super-busy in some unit of time:",true);
+		timeStayBusy=(float) inputScanner(in,"Please enter how long they stay super-busy: (in minutes)",true);
 
-		//Start running the simulator, plus calculate its executed time (including time needed to display on the console)
-		long startTime = System.nanoTime();
-		
-		//Use this when the time of making a cup of coffee doesn't matter
-		//new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION).runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
-		//Use this when the time of making a cup of coffee is taken into account
-		new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME).runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
-		
-		long endTime = System.nanoTime();
-		long duration = (endTime - startTime);
-		System.out.println("Execution time: "+duration/1000000+" milliseconds");
+		//Start running the simulator
+		//Use this when the time of making a cup of coffee is not taken into consideration
+		//coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
+		//Use this when the time of making a cup of coffee is taken into consideration
+		coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
+		coffeeMachineSimulator.runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
 	}
 
 
