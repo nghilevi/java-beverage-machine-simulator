@@ -16,7 +16,9 @@ PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, 
 
 ##Other notes about this implementation:
 _ For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily.
+
 _ It is assumed that in each hour, all engineers drink one cup of coffee whenever he/she likes.
+
 _ When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
 
 Use this when the time of making a cup of coffee is NOT taken into consideration:
@@ -29,6 +31,8 @@ Or use this in the reversed case:
 coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
 ```
 It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily.
+
+_ The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of get and set elements based on its index. These add and set perations have been used a lot in the program meanwhiile there is not much add and absolutely no remove operation in the program.
 
 Other comments/notes/explanations are written inside the program.
 
