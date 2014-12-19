@@ -12,7 +12,7 @@ public class Main {
 		CoffeeMachineSimulator coffeeMachineSimulator;
 		Scanner in = new Scanner(System.in);
 		
-		//The user starts typing inputs
+		//The user starts typing inputs via instructions
 		numberOfEngineers=(int) inputScanner(in,"Please enter a valid (integer) number of engineers:",false);
 		chanceAnEngineerCanBeSuperBusy=(float) inputScanner(in,"Please enter the chance (from 0.0 to 1.0) that an engineer becomes super-busy in some unit of time:",true);
 		timeStayBusy=(float) inputScanner(in,"Please enter how long they stay super-busy: (in minutes)",true);
@@ -20,7 +20,7 @@ public class Main {
 		//Start running the simulator
 		//Use this when the time of making a cup of coffee is taken into consideration:
 		coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_CUP_OF_COFFEE_TIME);
-		//Use this line below when the time of making a cup of coffee is not taken into consideration:
+		//Use this line below when the time of making a cup of coffee is NOT taken into consideration:
 		//coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
 		
 		coffeeMachineSimulator.runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
