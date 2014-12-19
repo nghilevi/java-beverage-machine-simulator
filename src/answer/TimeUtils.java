@@ -7,19 +7,18 @@ import java.util.Date;
 import java.util.Random;
 
 public class TimeUtils {
+	static SimpleDateFormat hourFormat= new SimpleDateFormat("hh:mm");
 	/*
 	 * Generate random point in time based on a specific hour
 	 */
 	public static String generateTimeBasedOnHour(int currentHour){
-		Random random = new Random();
-		int randomNumber = random.nextInt(59) + 0;
 		String randomTime;
+		int randomNumber = new Random().nextInt(59) + 0;
 		if(randomNumber<10){
 			randomTime=currentHour+":0"+randomNumber;
 		}else{
 			randomTime=currentHour+":"+randomNumber;
 		}
-		
 		return randomTime;
 	}
 	
@@ -31,11 +30,10 @@ public class TimeUtils {
 	 * less than 0 if first time is before/less than second time
 	 */
 	public static int compareTime(String time1,String time2){
-		SimpleDateFormat format= new SimpleDateFormat("hh:mm");
 	    Date t1=null,t2=null;
 	    try {
-			t1 = format.parse(time1);
-			t2 = format.parse(time2);
+			t1 = hourFormat.parse(time1);
+			t2 = hourFormat.parse(time2);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -46,11 +44,10 @@ public class TimeUtils {
 	 * Calculate the difference between two time in minutes
 	 */
 	public static int differentBetweenTime(String time1,String time2){
-		SimpleDateFormat format= new SimpleDateFormat("hh:mm"); //TODO
 	    Date t1=null,t2=null;
 	    try {
-			t1 = format.parse(time1);
-			t2 = format.parse(time2);
+			t1 = hourFormat.parse(time1);
+			t2 = hourFormat.parse(time2);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

@@ -21,7 +21,7 @@ public class CoffeeMachineSimulator {
 		this.makeOneCupOfCoffeeTime=makeOneCupOfCoffeeTime;
 	}
 	
-	public void runCoffeeMachineSimulator (int numberOfEngineers,Float chanceAnEngineerCanBeSuperBusy,Float timeStayBusy){
+	public void runCoffeeMachineSimulator (int numberOfEngineers,float chanceAnEngineerCanBeSuperBusy,float timeStayBusy){
 		long startTime = System.nanoTime();
 		jointQueueTimeComparator=new JointQueueTimeComparator();
 		busyStatusComparator=new BusyStatusComparator(makeOneCupOfCoffeeTime);
@@ -42,9 +42,9 @@ public class CoffeeMachineSimulator {
 	    //Display the table on the console
 	    int startedWorkTime=startWorkingTime, 
 	    		endedWorkTime=endWorkingTime;
-		for(int i=startedWorkTime;i<endedWorkTime;i++){
-	    	System.out.println("\nFrom "+i+":00 to "+(i+1)+":00");
-	    	displayActivitiesInOneWorkingHour(i,engineerList);
+		for(int currentHour=startedWorkTime;currentHour<endedWorkTime;currentHour++){
+	    	System.out.println("\nFrom "+currentHour+":00 to "+(currentHour+1)+":00");
+	    	displayActivitiesInOneWorkingHour(currentHour,engineerList);
 	    	System.out.println("===================================================================================================================================================================");
 	    }
 		
@@ -55,14 +55,14 @@ public class CoffeeMachineSimulator {
 	}
 
 	private void displayActivitiesInOneWorkingHour(int currentHour,ArrayList<Engineer> engineerList){    
-		//Update working status every one hour
+		//Update busy status for all engineers each hour
 		Engineer engineer;
-		String jointQueueTime;
+		String enterQueueTime;
 		int engineerListSize=engineerList.size();
 		for (int i = 0; i < engineerListSize; i++){
-			jointQueueTime =TimeUtils.generateTimeBasedOnHour(currentHour);
+			enterQueueTime =TimeUtils.generateTimeBasedOnHour(currentHour);
 			engineer = engineerList.get(i);
-			engineer.setEnterQueueTime(jointQueueTime);
+			engineer.setEnterQueueTime(enterQueueTime);
 			engineer.updateBusyStatus(currentHour);
 			engineerList.set(i, engineer);
 		}	
@@ -70,13 +70,13 @@ public class CoffeeMachineSimulator {
 	}
 
 	private void printOutTableOnConsoleWindow(ArrayList<Engineer> engineerList){
-		Object[][] table = new String[engineerList.size()][8];
+		String[][] table = new String[engineerList.size()][8];
 	    
-	   	//Sort the queue list based on the time an engineer joints the queue to create a first-come-first-server queue
+	   	//Sort the queue list based on the time --> create a first-come-first-server queue
 		Collections.sort(engineerList,jointQueueTimeComparator);
 	    table= populateDataIntoTable(engineerList,table,false);
 
-	    //Sort the list based on the busy status
+	    //Sort the list based on busy status
 	    Collections.sort(engineerList,busyStatusComparator);
 	    table=populateDataIntoTable(engineerList,table,true);
 	    
@@ -85,12 +85,12 @@ public class CoffeeMachineSimulator {
 	    System.out.printf(columnsFormat, "","","NORMAL QUEUE", "","", "| ","PRIORITIZED QUEUE",""); 
 	    System.out.printf(columnsFormat, "Engineer-Id","Start-Super-Busy-At","End-Super-Busy-At", "Enter-Queue-At","Status-On-Queue", "| Engineer-Id","Status-On-Queue","Enter-Queue-At"); 
 	    System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-	    for (final Object[] row : table) {
+	    for (String[] row : table) {
 	    	System.out.printf(columnsFormat, row[0], row[1],row[2], row[3],row[4], row[5],row[6],row[7]);
 	    } 
 	}
 
-	private Object[][] populateDataIntoTable(ArrayList<Engineer> engineerList, Object[][] table, boolean isPrioritizedList){
+	private String[][] populateDataIntoTable(ArrayList<Engineer> engineerList, String[][] table, boolean isPrioritizedList){
 		Engineer engineer;
 		int engineerListSize=engineerList.size();
 	    for (int i = 0; i <engineerListSize; i++){
@@ -123,7 +123,7 @@ public class CoffeeMachineSimulator {
 	    	if(makeOneCupOfCoffeeTime>0){ //The time of producing a cup of coffee is considered
 	    		String time1=e1.getJointQueueTime(),time2=e2.getJointQueueTime();
 	    		/*
-	    		 * If the difference between 2 joint queue time is greater than the time of producing a cup of coffee,
+	    		 * If the difference between 2 enter queue time is greater than the time of producing a cup of coffee,
 	    		 * then busy status does not take into account
 	    		 */
 	    		if(TimeUtils.differentBetweenTime(time1, time2)>makeOneCupOfCoffeeTime){ 
