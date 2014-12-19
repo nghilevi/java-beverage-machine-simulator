@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	private static int START_WORKING_TIME=9,WORKING_DURATION=8;
-	private static double MAKE_ONE_COFFEE_TIME=2.5;
+	private static double MAKE_ONE_CUP_OF_COFFEE_TIME=2.5;
 	
 	public static void main(String[] args) throws IOException {
 		int numberOfEngineers;
@@ -18,10 +18,11 @@ public class Main {
 		timeStayBusy=(float) inputScanner(in,"Please enter how long they stay super-busy: (in minutes)",true);
 
 		//Start running the simulator
-		//Use this when the time of making a cup of coffee is not taken into consideration
+		//Use this when the time of making a cup of coffee is taken into consideration:
+		coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_CUP_OF_COFFEE_TIME);
+		//Use this line below when the time of making a cup of coffee is not taken into consideration:
 		//coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
-		//Use this when the time of making a cup of coffee is taken into consideration
-		coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
+		
 		coffeeMachineSimulator.runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
 	}
 

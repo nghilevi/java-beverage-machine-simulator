@@ -26,8 +26,11 @@ public class CoffeeMachineSimulator {
 		jointQueueTimeComparator=new JointQueueTimeComparator();
 		busyStatusComparator=new BusyStatusComparator(makeOneCupOfCoffeeTime);
 		
-		System.out.println("\nA sample activity log of coffee machine in a working day starting from "+startWorkingTime+":00 to "+endWorkingTime+":00\n");
-		
+		System.out.println("\nCOFFEE MACHINE ACTIVITY LOG STARTING FROM "+startWorkingTime+":00 TO "+endWorkingTime+":00");
+		String notice="(Notice: the time of making a cup of coffee is ";
+		if(makeOneCupOfCoffeeTime<=0){notice+="not";}
+		System.out.println(notice +" taken into consideration)\n");
+
 		//Initialize engineerList
 		Engineer.timeStaySuperBusy= timeStayBusy;
 		Engineer.chanceAnEngineerCanBeSuperBusy= chanceAnEngineerCanBeSuperBusy;
@@ -70,11 +73,11 @@ public class CoffeeMachineSimulator {
 		Object[][] table = new String[engineerList.size()][8];
 	    
 	   	//Sort the queue list based on the time an engineer joints the queue to create a first-come-first-server queue
-	   	Collections.sort(engineerList, jointQueueTimeComparator);
+		Collections.sort(engineerList,jointQueueTimeComparator);
 	    table= populateDataIntoTable(engineerList,table,false);
 
 	    //Sort the list based on the busy status
-	    Collections.sort(engineerList, busyStatusComparator);
+	    Collections.sort(engineerList,busyStatusComparator);
 	    table=populateDataIntoTable(engineerList,table,true);
 	    
 	    //Display the table in columns
