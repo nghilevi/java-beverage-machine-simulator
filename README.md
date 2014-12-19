@@ -30,10 +30,10 @@ Or use this in the reversed case:
 ```sh
 coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
 ```
-It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily.
+It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily depending on the user.
 
 _ The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of get and set elements based on its index. These add and set perations have been used intensively meanwhiile there is not much add and no remove operation in the program.
 
-For other comments/notes/explanations are written inside the program.
+_ More comments/notes/explanations are written inside the program.
 
 Thanks for reading! :)
