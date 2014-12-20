@@ -21,7 +21,7 @@ public class CoffeeMachineSimulator {
 		this.makeOneCupOfCoffeeTime=makeOneCupOfCoffeeTime;
 	}
 	
-	public void run (int numberOfEngineers,float chanceAnEngineerCanBeSuperBusy,float timeStayBusy){
+	public void run(int numberOfEngineers,float chanceAnEngineerCanBeSuperBusy,float timeStayBusy){
 		long startTime = System.nanoTime();
 		jointQueueTimeComparator=new JointQueueTimeComparator();
 		busyStatusComparator=new BusyStatusComparator(makeOneCupOfCoffeeTime);
@@ -51,7 +51,7 @@ public class CoffeeMachineSimulator {
 		//Print out execution time (including time needed to display on the console)
 		long endTime = System.nanoTime();
 		long duration = (endTime - startTime);
-		System.out.println("Execution time: "+duration/1000000+" milliseconds");
+		System.out.println("Execution time: "+duration/1000000+" milliseconds (including time needed to display on the console)");
 	}
 
 	private void displayActivitiesInOneWorkingHour(int currentHour,ArrayList<Engineer> engineerList){    
