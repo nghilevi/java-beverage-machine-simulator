@@ -1,15 +1,14 @@
 This is the answer for the technical question. The program prints out an activity log of the coffee machine in a defined period of time. It also prints out the execution time of the simulator. 
 
 ##How to run the program:
-You can download this repository and open the project in Eclipse. Go to src -> answer -> Main.java, then click the Run button.
-Type in inputs in the console window and press Enter. 
+You can download this repository and open the project in Eclipse. Go to src -> answer -> Main.java, then click the Run button. Type in inputs in the console window and press Enter. 
 
 Sample output:
 
 ![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot.PNG "Screenshot")
 
 ##Explanation
-The output prints out 2 seperate queues set next to each other, seperated by a "|" for ease of comparison.
+The output prints out 2 seperate queues set next to each other, seperated by "|" for ease of comparison.
 
 * NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
 
@@ -17,11 +16,11 @@ The output prints out 2 seperate queues set next to each other, seperated by a "
 
 * Engineer-Id: each engineer-id represents an engineer.
 
-* Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the likelihood that the engineer can become super-busy.
+* Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the likelihood that the engineer can become super-busy in a unit of time.
 
-* End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by startedBusyTime + timeStaySuperBusy (in minutes) inputed by the user.
+* End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputed by the user.
 
-* Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time when the engineer enter a queue is before or after he/she has become non super busy.
+* Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time the engineer enter the queue is before or after he/she has become non super busy.
 
 ##Other notes about this implementation:
 * For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
@@ -39,9 +38,9 @@ Or use this in the reversed case:
 ```sh
 coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
 ```
-* It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily in the Constants.java file depending on the user.
+In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily in the Constants.java file depending on the user.
 
-* The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
+* The program uses ArrayList as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
 
 * More comments/notes/explanations are also written inside the program.
 
