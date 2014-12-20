@@ -13,13 +13,13 @@ The output prints out 2 seperate queues set next to each other, seperated by "|"
 
 * NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
 
-Take an example in this screenshot, you can read from left to right as follows: "From 9:00 to 10:00, Engineer 7 who started becoming busy at 9:41 and became non super busy at 11:11. He entered queue at 9:07, so at the time he entered the queue he was Non Super Busy" The same logic applies for other engineers in the same hour.
+Take an example in this screenshot, you can read from left to right as follows: "From 9:00 to 10:00, Engineer 7 who started becoming super busy at 9:41 and became non super busy at 11:11. He entered queue at 9:07, so at the time he entered the queue he was Non super busy" The same logic applies for other engineers in the same hour.
 
-* PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. In other words, PRIORITIZED QUEUE is a NORMAL QUEUE which has been sorted based on the busy status and, optionally, based on whether or not the time of making a cup of coffee is taken into account (For this reason, the Super-Busy one is not always the one who stays on top. Thisdepends on the time he joint the queue). Therefore, for the convinient of checking, the program prints out 3 columns representing the engineer id, his busy status when on queue, and the time he enter the queue. 
+* PRIORITIZED QUEUE represents a queue of people processed by the coffee machine, meaning when an engineer is super-busy he is prioritized before non-super-busy ones. In other words, PRIORITIZED QUEUE is a NORMAL QUEUE which has been sorted based on the busy status and, optionally, based on whether or not the time of making a cup of coffee is taken into account (For this reason, the Super-Busy one is not always the one who stays on top as this also depends on the time he joint the queue). Therefore, for the convinient of checking, the program prints out 3 columns representing the engineer id, his busy status when on queue, and the time he entered the queue. 
 
 When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
 
-Use this when the time of making a cup of coffee is NOT taken into consideration:
+Use this when the time of making a cup of coffee is NOT taken into account:
 ```sh
 coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
 ```
@@ -36,7 +36,7 @@ In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes
 
 * End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputed by the user.
 
-* Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time the engineer enter the queue is before or after he/she has become non super busy.
+* Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time the engineer enter the queue is before or after the period he/she has become super busy.
 
 ##Other notes about this implementation:
 * For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
@@ -45,7 +45,7 @@ In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes
 
 * The program uses ArrayList as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
 
-* As not defined in the technical question and for the constraint time of implementation, currently the program has not been implemented to handle certain situations such as where the user enter an unrealistic inputs.
+* As not defined in the technical question and for the constraint time of implementation, currently the program has not been implemented to handle certain situations such as where the user give unrealistic inputs.
 
 * More comments/notes/explanations are also written inside the program.
 
