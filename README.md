@@ -24,11 +24,11 @@ The output prints out 2 seperate queues set next to each other, seperated by a "
 * Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time when the engineer enter a queue is before or after he/she has become non super busy.
 
 ##Other notes about this implementation:
-_ For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
+* For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
 
-_ It is assumed that in each hour, all engineers drink one cup of coffee whenever he/she likes.
+* It is assumed that in each hour, all engineers drink one cup of coffee whenever he/she likes.
 
-_ When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
+* When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
 
 Use this when the time of making a cup of coffee is NOT taken into consideration:
 ```sh
@@ -41,8 +41,8 @@ coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURA
 ```
 It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily in the Constants.java file depending on the user.
 
-_ The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
+* The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
 
-_ More comments/notes/explanations are also written inside the program.
+* More comments/notes/explanations are also written inside the program.
 
 Thanks for reading! :)
