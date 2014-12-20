@@ -44,6 +44,8 @@ In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes
 
 * The program uses ArrayList as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
 
+* As not defined in the technical question and for the constraint time of implementation, currently the program has not been implemented to handle certain situations such as where the user enter an unrealistic inputs.
+
 * More comments/notes/explanations are also written inside the program.
 
 Thanks for reading! :)
