@@ -68,23 +68,36 @@ public class Engineer {
 		if(busyStatus==NON_SUPER_BUSY_STATUS){ 
 			double randomNumber = Math.random(); //0.0 <= randomNumber < 1.0.
 			if (randomNumber <= chanceAnEngineerCanBeSuperBusy){
-				setBusyStatus(SUPER_BUSY_STATUS);
 				String startedBusyTime=TimeUtils.generateTimeBasedOnHour(currentHour);
 				this.startSuperBusyTime=startedBusyTime;
-				this.endSuperBusyTime=TimeUtils.addMinutes(startedBusyTime,timeStaySuperBusy);
+				this.endSuperBusyTime=TimeUtils.addMinutes(startedBusyTime,timeStaySuperBusy);				
+				updateBusyStatusBasedOnTime(enterQueueTime,startSuperBusyTime, endSuperBusyTime);
 			}
 			return;
 		}
 		
-		/*
-		 * If the engineer has been super busy
-		 * If he joint the queue after he has ended his super busy state, then set his busy status to non super busy status
-		 */
 		if(busyStatus==SUPER_BUSY_STATUS){ 
-			if(TimeUtils.compareTime(enterQueueTime,endSuperBusyTime)>0){
-				setBusyStatus(NON_SUPER_BUSY_STATUS); //The engineer is not busy anymore
-			}
+			updateBusyStatusBasedOnTime(enterQueueTime,startSuperBusyTime, endSuperBusyTime);
 			return;
+		}
+	}
+	
+	private void updateBusyStatusBasedOnTime(String enterQueueTime,String startSuperBusyTime,String endSuperBusyTime){
+		int enterQueueVSEndSuperBusyTime=TimeUtils.compareTime(enterQueueTime,endSuperBusyTime);
+		int enterQueueVSStartSuperBusyTime=TimeUtils.compareTime(enterQueueTime,startSuperBusyTime);
+		
+		/*
+		 * enterQueueTime < startSuperBusyTime Or enterQueueTime >= endSuperBusyTime  
+		 */
+		if((enterQueueVSStartSuperBusyTime<0) || (enterQueueVSEndSuperBusyTime>=0)){
+			setBusyStatus(NON_SUPER_BUSY_STATUS);
+		}
+		
+		/*
+		 * enterQueueTime >= startSuperBusyTime Or enterQueueTime < endSuperBusyTime  
+		 */
+		if((enterQueueVSStartSuperBusyTime>=0) && (enterQueueVSEndSuperBusyTime<0)){
+			setBusyStatus(SUPER_BUSY_STATUS);
 		}
 	}
 }

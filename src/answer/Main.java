@@ -2,6 +2,12 @@ package answer;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Nghi Le Vinh <vinhnghi223@gmail.com>
+ * 
+ */
+
 public class Main {
 	private static int START_WORKING_TIME=Constants.START_WORKING_TIME;
 	private static int WORKING_DURATION=Constants.WORKING_DURATION;
