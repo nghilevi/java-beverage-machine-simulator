@@ -1,4 +1,4 @@
-This is the answer for the technical question. The program prints out an activity log of the coffee machine in a defined period of time. It also prints out the execution time of the simulator. 
+This is the answer for the technical question. The program prints out an activity log of the coffee machine in a defined period of time. It also prints out the execution time of the simulator. (Make sure to download the latest version to prevent legacy bugs and get the most up-to-date README.md)
 
 ##How to run the program:
 You can download this repository and open the project in Eclipse. Go to src -> answer -> Main.java, then click the Run button. Type in inputs in the console window and press Enter. 
