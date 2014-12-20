@@ -3,8 +3,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-	private static int START_WORKING_TIME=9,WORKING_DURATION=8;
-	private static double MAKE_ONE_CUP_OF_COFFEE_TIME=2.5;
+	private static int START_WORKING_TIME=Constants.START_WORKING_TIME;
+	private static int WORKING_DURATION=Constants.WORKING_DURATION;
+	private static double MAKE_ONE_CUP_OF_COFFEE_TIME=Constants.MAKE_ONE_CUP_OF_COFFEE_TIME;
 	
 	public static void main(String[] args) throws IOException {
 		int numberOfEngineers;

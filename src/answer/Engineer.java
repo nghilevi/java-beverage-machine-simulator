@@ -1,8 +1,8 @@
 package answer;
 
 public class Engineer {
-	final public static int NON_SUPER_BUSY_STATUS=BusyStatus.NON_SUPER_BUSY_STATUS.getWorkingStatus(),
-			SUPER_BUSY_STATUS=BusyStatus.SUPER_BUSY_STATUS.getWorkingStatus();
+	final private static int NON_SUPER_BUSY_STATUS=Constants.NON_SUPER_BUSY_STATUS;
+	final private static int SUPER_BUSY_STATUS=Constants.SUPER_BUSY_STATUS;
 	public static float timeStaySuperBusy;
 	public static float chanceAnEngineerCanBeSuperBusy;
 	private int id;

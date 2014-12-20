@@ -36,7 +36,7 @@ public class CoffeeMachineSimulator {
 		Engineer.chanceAnEngineerCanBeSuperBusy= chanceAnEngineerCanBeSuperBusy;
 	    ArrayList<Engineer> engineerList = new ArrayList<Engineer>();
 	    for(int i=0;i<numberOfEngineers;i++){
-	    	 engineerList.add(new Engineer(i+1,BusyStatus.NON_SUPER_BUSY_STATUS.getWorkingStatus())); //Every engineer is non super busy at first
+	    	 engineerList.add(new Engineer(i+1,Constants.NON_SUPER_BUSY_STATUS)); //Every engineer is non super busy at first
 	    }
 	    
 	    //Display the table on the console
