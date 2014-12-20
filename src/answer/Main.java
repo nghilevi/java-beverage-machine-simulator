@@ -18,7 +18,7 @@ public class Main {
 		float chanceAnEngineerCanBeSuperBusy,timeStayBusy;
 		CoffeeMachineSimulator coffeeMachineSimulator;
 		Scanner in = new Scanner(System.in);
-		
+
 		//The user starts typing inputs via instructions
 		numberOfEngineers=(int) inputScanner(in,"Please enter a valid (integer) number of engineers:",false);
 		chanceAnEngineerCanBeSuperBusy=(float) inputScanner(in,"Please enter the chance (from 0.0 to 1.0) that an engineer becomes super-busy in some unit of time:",true);
