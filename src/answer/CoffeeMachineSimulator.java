@@ -7,8 +7,8 @@ import java.util.Comparator;
 public class CoffeeMachineSimulator {
 	private int	startWorkingTime,endWorkingTime;
 	private double makeOneCupOfCoffeeTime;
-	JointQueueTimeComparator jointQueueTimeComparator;
-	BusyStatusComparator busyStatusComparator;
+	private JointQueueTimeComparator jointQueueTimeComparator;
+	private BusyStatusComparator busyStatusComparator;
 	
 	CoffeeMachineSimulator(int startWorkingTime, int workingDuration){
 		this.startWorkingTime=startWorkingTime;
