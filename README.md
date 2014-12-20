@@ -1,7 +1,7 @@
 This is the answer for the technical question. The program prints out an activity log of the coffee machine in a defined period of time. It also prints out the execution time of the simulator. 
 
 ##How to run the program:
-You can download this repository and open it in Eclipse. Go to src -> answer -> Main.java, then click the Run button.
+You can download this repository and open the project in Eclipse. Go to src -> answer -> Main.java, then click the Run button.
 Type in inputs in the console window and press Enter. 
 
 Sample output:
@@ -41,8 +41,8 @@ coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURA
 ```
 It is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily in the Constants.java file depending on the user.
 
-_ The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of get and set elements based on its index. These add and set perations have been used intensively meanwhiile there is not much add and no remove operation in the program.
+_ The program uses Array List as the data structure to store the queue of engineers object. This is due to its efficiency of random access operations which have been used intensively in the program.
 
-_ More comments/notes/explanations are written inside the program.
+_ More comments/notes/explanations are also written inside the program.
 
 Thanks for reading! :)
