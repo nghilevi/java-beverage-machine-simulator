@@ -8,6 +8,9 @@ Sample output:
 ![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot.PNG "Screenshot")
 
 ##Explanation
+
+Take an example in this screenshot, you can read from left to right as follows: "From 9:00 to 10:00, Engineer 7 who started becoming busy at 9:41 and became non super busy at 11:11. He entered queue at 9:07, so at the time he entered the queue he was not busy" The same logic applies for Engineer 5 in the same hour.
+
 The output prints out 2 seperate queues set next to each other, seperated by "|" for ease of comparison.
 
 * NORMAL QUEUE represents a natural queue of people regardless of their busy status. The one who enters the queue first (as can be seen in Enter-Queue-At column) stays on top.
