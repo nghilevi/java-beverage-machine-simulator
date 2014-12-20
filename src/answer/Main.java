@@ -23,7 +23,7 @@ public class Main {
 		//Use this line below when the time of making a cup of coffee is NOT taken into consideration:
 		//coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
 		
-		coffeeMachineSimulator.runCoffeeMachineSimulator(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
+		coffeeMachineSimulator.run(numberOfEngineers,chanceAnEngineerCanBeSuperBusy,timeStayBusy);
 	}
 
 

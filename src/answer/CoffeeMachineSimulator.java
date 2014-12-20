@@ -21,7 +21,7 @@ public class CoffeeMachineSimulator {
 		this.makeOneCupOfCoffeeTime=makeOneCupOfCoffeeTime;
 	}
 	
-	public void runCoffeeMachineSimulator (int numberOfEngineers,float chanceAnEngineerCanBeSuperBusy,float timeStayBusy){
+	public void run (int numberOfEngineers,float chanceAnEngineerCanBeSuperBusy,float timeStayBusy){
 		long startTime = System.nanoTime();
 		jointQueueTimeComparator=new JointQueueTimeComparator();
 		busyStatusComparator=new BusyStatusComparator(makeOneCupOfCoffeeTime);
