@@ -46,7 +46,7 @@ For example, let's check the case of engineer 56 as below. Even though he entere
 
 ![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot2.PNG "This is not a bug")
 
-In  PRIORITIZED QUEUE, engineer 56 was priopritized before engineer 52 even though engineer 52 entered the queue before engineer 56. The reason is the gap between the entered time of these 2 engineers was 2 minutes, less than the time of making a cup of coffee (2.5 minutes, in this case). So the one who is super busy will be priopritized before the non super busy one. If the time of making a cup of coffee is not taken into account, then no matter when the non super busy entered the queue, he will always be arranged below the super busy ones.
+In  <b>PRIORITIZED QUEUE</b>, engineer 56 was priopritized before engineer 52 even though engineer 52 entered the queue before engineer 56. The reason is the gap between the entered time of these 2 engineers was 2 minutes, less than the time of making a cup of coffee (2.5 minutes, in this case). So the one who is super busy will be priopritized before the non super busy one. If the time of making a cup of coffee is not taken into account, then no matter when the non super busy entered the queue, he will always be arranged below the super busy ones.
 
 ##Other notes about this implementation:
 * For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
