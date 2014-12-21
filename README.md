@@ -26,15 +26,15 @@ coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DUR
 
 Or use this in the reversed case:
 ```sh
-coffeeMachineSimulator=new CoffeeMachineSimulatorSTART_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
+coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION,MAKE_ONE_COFFEE_TIME);
 ```
-In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes. This can also be adjusted easily in the Constants.java file depending on the user.
+In this case, it is assumed that the time to make a cup of coffee is 2.5 minutes. This number can also be adjusted easily in the Constants.java file depending on the user.
  
 * Engineer-Id: each engineer-id represents an engineer.
 
-* Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the likelihood that the engineer can become super-busy in a unit of time.
+* Start-Super-Busy-At: The specific time an engineer becomes super busy. This is generated randomly based on the chance that the engineer can become super-busy in a unit of time.
 
-* End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputed by the user.
+* End-Super-Busy-At: The specific time an engineer becoms non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputted by the user.
 
 * Status-On-Queue: Super-Busy or Non-Super-Busy. This is decided based on whether the time the engineer enter the queue is before or after the period he/she has become super busy.
 
