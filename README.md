@@ -19,7 +19,7 @@ Take an example in this screenshot, you can read from left to right as follows: 
 
 When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
 
-Use this when the time of making a cup of coffee is NOT taken into account:
+In Main.java, use this when the time of making a cup of coffee is NOT taken into account:
 ```sh
 coffeeMachineSimulator=new CoffeeMachineSimulator(START_WORKING_TIME,WORKING_DURATION);
 ```
@@ -39,7 +39,7 @@ To understand more about these 2 queues, please read more about the explanation 
 * <b>End-Super-Busy-At</b>: The specific time an engineer becomes non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputted by the user.
 
 * <b>Entered-Queue-At</b>: The specific time when an engineer <b>enters the queue</b>.
-* 
+
 * <b>Status-On-Queue</b>: the busy status when the engineer is standing in the queue (Super-Busy or Non-Super-Busy). This is decided based on whether the time the engineer enter the queue is before or after the period he/she has become super busy and, optionally, the time of making a cup of coffee.
 
 For example, let's check the case of engineer 56 as below. Even though he entered the queue (13:12) before he started super busy (13:14), he was still considered as super busy because the time to make a cup of coffee, in this case, is 2.5 minutes, is taken into account, which means at the time he started becoming super busy, he might still be on the queue to wait for his coffee to be ready. 
