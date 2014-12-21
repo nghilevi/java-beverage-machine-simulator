@@ -85,5 +85,4 @@ public class TimeUtils {
 		cal.add(Calendar.MINUTE, (int) minutes);
 		return hourFormat.format(cal.getTime());
 	}
-
 }

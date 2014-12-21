@@ -70,7 +70,7 @@ public class Engineer {
 			if (randomNumber <= chanceAnEngineerCanBeSuperBusy){
 				String startedBusyTime=TimeUtils.generateTimeBasedOnHour(currentHour);
 				this.startSuperBusyTime=startedBusyTime;
-				this.endSuperBusyTime=TimeUtils.addMinutes(startedBusyTime,timeStaySuperBusy);				
+				this.endSuperBusyTime=TimeUtils.addMinutes(startedBusyTime,timeStaySuperBusy);
 				updateBusyStatusBasedOnTime(enterQueueTime,startSuperBusyTime, endSuperBusyTime);
 			}
 			return;
@@ -91,13 +91,15 @@ public class Engineer {
 		 */
 		if((enterQueueVSStartSuperBusyTime<0) || (enterQueueVSEndSuperBusyTime>=0)){
 			setBusyStatus(NON_SUPER_BUSY_STATUS);
+			return;
 		}
 		
 		/*
-		 * enterQueueTime >= startSuperBusyTime Or enterQueueTime < endSuperBusyTime  
+		 * startSuperBusyTime <= enterQueueTime < endSuperBusyTime  
 		 */
 		if((enterQueueVSStartSuperBusyTime>=0) && (enterQueueVSEndSuperBusyTime<0)){
 			setBusyStatus(SUPER_BUSY_STATUS);
+			return;
 		}
 	}
 }
