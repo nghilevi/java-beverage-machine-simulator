@@ -15,7 +15,7 @@ The output prints out 2 seperate queues set next to each other, seperated by "|"
 
 Take an example in this screenshot, you can read from left to right as follows: "From 9:00 to 10:00, Engineer 7 who started becoming super busy at 9:41 and became non super busy at 11:11. He entered queue at 9:07, so at the time he entered the queue he was Non super busy" The same logic applies for other engineers in the same hour.
 
-* <b>PRIORITIZED QUEUE</b> represents a queue of people processed by the coffee machine, meaning when an engineer is super busy he is prioritized before non super busy ones. In other words, PRIORITIZED QUEUE is a NORMAL QUEUE which has been sorted based on the busy status and, optionally, based on whether or not the time of making a cup of coffee is taken into account (For this reason, the super busy one is not always the one who stays on top as this also depends on the time he joint the queue). For the convinient of checking, the program prints out 3 columns representing the engineer id, his busy status when on queue, and the time he entered the queue as only these 3 are taken into account when generating PRIORITIZED QUEUE. 
+* <b>PRIORITIZED QUEUE</b> represents a queue of people processed by the coffee machine, meaning when an engineer is super busy he is prioritized before non super busy ones. In other words, PRIORITIZED QUEUE is a NORMAL QUEUE which has been sorted based on the busy status and, optionally, based on whether or not the time of making a cup of coffee is taken into account (For this reason, the super busy one is not always the one who stays on top as this also depends on the time he joint the queue). For the convinient of checking, the program prints out 3 columns representing the engineer id, his busy status when on queue, and the time he entered the queue as these 3 are the main elements taken into account when generating PRIORITIZED QUEUE. 
 
 When start the simulator, it's up to you to choose whether or not "the time to make a cup of coffee" is taken into consideration:
 
@@ -49,7 +49,7 @@ For example, let's check the case of engineer 56 as below. Even though he entere
 In  <b>PRIORITIZED QUEUE</b>, engineer 56 was priopritized before engineer 52 even though engineer 52 entered the queue before engineer 56. The reason is the gap between the entered time of these 2 engineers was 2 minutes, less than the time of making a cup of coffee (2.5 minutes, in this case). So the one who is super busy will be priopritized before the non super busy one. If the time of making a cup of coffee is not taken into account, then no matter when the non super busy entered the queue, he will always be arranged below the super busy ones.
 
 ##Other notes about this implementation:
-* For representational purpose, the program uses a default start working time, and working duration to define the boudary of what to be printed out. This can be modified easily in the Constants.java file.
+* For representational purpose, the program uses a default start working time, and working duration to define the boundary of what to be printed out. This can be modified easily in the Constants.java file.
 
 * It is assumed that in each hour, all engineers drink one cup of coffee whenever he/she likes.
 
