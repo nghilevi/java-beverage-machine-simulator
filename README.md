@@ -38,7 +38,7 @@ To understand more about these 2 queues, please read more about the explanation 
 
 * <b>End-Super-Busy-At</b>: The specific time an engineer becomes non super busy. This is calculated by started busy time + time stay super busy (in minutes) inputted by the user.
 
-* <b>Entered-Queue-At</b>: The specific time an engineer <b>enters the queue</b>.
+* <b>Entered-Queue-At</b>: The specific time when an engineer <b>enters the queue</b>.
 * 
 * <b>Status-On-Queue</b>: the busy status when the engineer is standing in the queue (Super-Busy or Non-Super-Busy). This is decided based on whether the time the engineer enter the queue is before or after the period he/she has become super busy and, optionally, the time of making a cup of coffee.
 
