@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class CoffeeMachineSimulator {
 	private int	startWorkingTime,endWorkingTime;
-	private double makeOneCupOfCoffeeTime;
+	private double makeOneCupOfCoffeeTime=0;
 	private JointQueueTimeComparator jointQueueTimeComparator;
 	private BusyStatusComparator busyStatusComparator;
 	
@@ -28,12 +28,13 @@ public class CoffeeMachineSimulator {
 		
 		System.out.println("\nCOFFEE MACHINE ACTIVITY LOG STARTING FROM "+startWorkingTime+":00 TO "+endWorkingTime+":00");
 		String notice="(Notice: the time of making a cup of coffee is ";
-		if(makeOneCupOfCoffeeTime<=0){notice+="not";}
+		if(makeOneCupOfCoffeeTime<=0){notice+="not";}else{notice+=makeOneCupOfCoffeeTime+" minutes. This time is";}
 		System.out.println(notice +" taken into consideration)\n");
 
 		//Initialize engineerList
 		Engineer.timeStaySuperBusy= timeStayBusy;
 		Engineer.chanceAnEngineerCanBeSuperBusy= chanceAnEngineerCanBeSuperBusy;
+		Engineer.makeOneCupOfCoffeeTime=makeOneCupOfCoffeeTime;
 	    ArrayList<Engineer> engineerList = new ArrayList<Engineer>();
 	    for(int i=0;i<numberOfEngineers;i++){
 	    	 engineerList.add(new Engineer(i+1,Constants.NON_SUPER_BUSY_STATUS)); //Every engineer is non super busy at first

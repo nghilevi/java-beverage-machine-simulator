@@ -5,11 +5,13 @@ public class Engineer {
 	private static int SUPER_BUSY_STATUS=Constants.SUPER_BUSY_STATUS;
 	public static float timeStaySuperBusy;
 	public static float chanceAnEngineerCanBeSuperBusy;
+	public static double makeOneCupOfCoffeeTime=0;
 	private int id;
 	private int busyStatus;
 	private String startSuperBusyTime;
 	private String endSuperBusyTime;
 	private String enterQueueTime;
+	
 	
 	Engineer(int id,int busyStatus){
 		this.id=id;
@@ -85,6 +87,18 @@ public class Engineer {
 	private void updateBusyStatusBasedOnTime(String enterQueueTime,String startSuperBusyTime,String endSuperBusyTime){
 		int enterQueueVSEndSuperBusyTime=TimeUtils.compareTime(enterQueueTime,endSuperBusyTime);
 		int enterQueueVSStartSuperBusyTime=TimeUtils.compareTime(enterQueueTime,startSuperBusyTime);
+		
+		/*
+		 * if (startSuperBusyTime - enterQueueTime) < makeOneCupOfCoffeeTime then the engineer will become super busy at the time he is waiting for the coffee
+		 */
+		if(makeOneCupOfCoffeeTime>0){
+			if((TimeUtils.differentBetweenTime(enterQueueTime, startSuperBusyTime)<makeOneCupOfCoffeeTime) && (enterQueueVSStartSuperBusyTime<0)){ 
+				System.out.println("Engineer "+this.id+" should be Super Busy!");
+				setBusyStatus(SUPER_BUSY_STATUS);
+				return;
+			}
+		}
+
 		
 		/*
 		 * enterQueueTime < startSuperBusyTime Or enterQueueTime >= endSuperBusyTime  
