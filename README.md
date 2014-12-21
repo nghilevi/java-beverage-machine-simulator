@@ -40,7 +40,7 @@ To understand more about these 2 queues, please read more about the explanation 
 
 * Status-On-Queue: the busy status when the engineer is standing in the queue (Super-Busy or Non-Super-Busy). This is decided based on whether the time the engineer enter the queue is before or after the period he/she has become super busy and, optionally, the time of making a cup of coffee.
 
-For example, let's check the case of engineer 56 as below. Even though he entered the queue (13:12) before he started super busy (13:14), he is still considered as super busy because the time to make a cup of coffee, in this case, is 2.5 minutes, is taken into account. 
+For example, let's check the case of engineer 56 as below. Even though he entered the queue (13:12) before he started super busy (13:14), he was still considered as super busy because the time to make a cup of coffee, in this case, is 2.5 minutes, is taken into account. 
 
 ![Screenshot](https://raw.githubusercontent.com/vinhnghi223/ZI2014-Nghi/master/Screenshot2.PNG "This is not a bug")
 
